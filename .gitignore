@@ -169,3 +169,92 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swo
+*.swp
+*.bak
+
+# Django specific
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Node modules
+node_modules/
+
+# Python virtual environment
+venv/
+env/
+
+# Environment variables
+.env
+
+# IDE/editor specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# macOS specific
+.DS_Store
+
+# Linux specific
+*.swp
+*~
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Test and debug files
+.tox/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Frontend build tools
+*.map
+*.lock
+npm-debug.log
+yarn-error.log
+yarn-debug.log*
+
+# Local static files
+assets/
+frontend-build/
+
+# Heroku
+*.env
+*.env.*
+
+# Logs and temporary files
+logs/
+*.log
+*.out
+*.pid
+*.gz
+*.dump
