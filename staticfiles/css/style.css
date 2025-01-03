@@ -999,11 +999,12 @@ section {
 
 .container {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: flex-start; /* Align children at the top */
-    align-items: stretch; /* Stretch children to full width */
-    min-height: 100vh; /* Ensure container takes at least the full viewport height */
-    overflow: hidden; /* Prevent overflow issues */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 1200px;
 }
 
 .projects {
@@ -1076,7 +1077,7 @@ section {
 
 .contact-form {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #fff;
     padding: 30px;
@@ -1123,3 +1124,8 @@ section {
         padding: 20px;
     }
 }
+
+.errorlist {
+    display: none;
+}
+
