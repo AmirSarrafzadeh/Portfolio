@@ -10,13 +10,13 @@ load_dotenv(dotenv_path=env_path)
 db_username = os.getenv("db_username")
 db_password = os.getenv("db_password")
 db_host = os.getenv("db_host")
-db_port = os.getenv("db_port")
+db_app = os.getenv("db_app")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = [".vercel.app", "*"]
 
 # Application definition
 
@@ -60,15 +60,17 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Portfolio.wsgi.application'
-
+"mongodb+srv://admin:156601366Sarina@contacts.hgmck.mongodb.net/?retryWrites=true&w=majority&appName=contacts"
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'djongo',
         'NAME': 'contacts',
-        'USER': f'{db_username}',
-        'PASSWORD': f'{db_password}',
-        'HOST': f'{db_host}',
-        'PORT': f'{db_port}',
+        'CLIENT': {
+            'host': f'mongodb+srv://{db_username}:{db_password}@{db_host}/?retryWrites=true&w=majority&appName={db_app}',
+            'ssl': True,
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1'
+        },
     }
 }
 
