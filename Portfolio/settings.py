@@ -68,6 +68,7 @@ DATABASES = {
         'CLIENT': {
             'host': f'mongodb+srv://{db_username}:{db_password}@{db_host}/?retryWrites=true&w=majority&appName={db_app}',
             'ssl': True,
+            'ssl_cert_reqs': 'CERT_NONE',
             'authSource': 'admin',
             'authMechanism': 'SCRAM-SHA-1'
         },
