@@ -25,6 +25,6 @@ class ContactForm(forms.ModelForm):
             'message': forms.Textarea(attrs={
                 'placeholder': 'Enter Message',
                 'class': 'form-control',
-                'style': 'width: 100%; padding: 10px; font-size: 16px; height: 250px;'
+                'style': 'width: 100%; padding: 10px; font-size: 16px; height: 130px;'
             }),
         }

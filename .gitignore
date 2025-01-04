@@ -256,3 +256,4 @@ logs/
 *.pid
 *.gz
 *.dump
+.vercel
