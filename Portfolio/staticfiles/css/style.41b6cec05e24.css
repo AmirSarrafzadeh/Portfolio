@@ -1,0 +1,355 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #272829;
+    line-height: 1.6;
+}
+
+a {
+    color: #149ddd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #37b3ed;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #149ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #2eafec;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    transition: all 0.5s;
+    z-index: 9997;
+    background: #040b14;
+    overflow-y: auto;
+}
+
+#header .profile img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid #2c2f3f;
+}
+
+#header .profile h1 {
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .profile .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#header .profile .social-links a:hover {
+    background: orangered;
+    color: #fff;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+@media (max-width: 768px) {
+    #header {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    #main {
+        margin-left: 0;
+    }
+
+    #header .profile img {
+        width: 80px;
+    }
+
+    #header .profile h1 {
+        font-size: 18px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.nav-menu {
+    padding: 30px 0 0 0;
+}
+
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-menu a i {
+    font-size: 24px;
+    padding-right: 8px;
+    color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active {
+    color: #fff;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i {
+    color: #149ddd;
+}
+
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/home.994aed59ddfd.jpeg") top center;
+    background-size: cover;
+}
+
+#hero:before {
+    content: "";
+    background: rgba(5, 13, 24, 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#hero p {
+    font-size: 26px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 28px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 60px 0;
+}
+
+.section-bg {
+    background: #f9f9f9;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #173b6c;
+}
+
+.section-title p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .section-title p {
+        font-size: 14px;
+    }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content {
+    text-align: justify;
+}
+
+.about .content h3 {
+    font-size: 26px;
+    color: #173b6c;
+}
+
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.skills-grid img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+
+.skills-grid img:hover {
+    transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Projects Section
+--------------------------------------------------------------*/
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .btn {
+    background: #149ddd;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.contact-form .btn:hover {
+    background: #0e77b7;
+}
+
+/*--------------------------------------------------------------
+# Media Queries for Small Screens
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

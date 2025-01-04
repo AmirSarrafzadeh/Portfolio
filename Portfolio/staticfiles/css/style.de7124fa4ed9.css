@@ -193,111 +193,34 @@ h6 {
     color: #149ddd;
 }
 
-/* Mobile Navigation Fixes */
-@media (max-width: 1199px) {
-    /* Header positioning */
-    #header {
-        left: -300px;
-        width: 300px;
-        position: fixed;
-        height: 100vh;
-        padding: 0;
-        transition: all 0.5s ease;
-    }
-
-    #header.mobile-nav-active {
-        left: 0;
-    }
-
-    /* Mobile nav toggle button */
-    .mobile-nav-toggle {
-        position: fixed;
-        right: 15px;
-        top: 15px;
-        z-index: 9999;
-        border: 0;
-        font-size: 24px;
-        transition: all 0.4s;
-        outline: none !important;
-        background-color: #149ddd;
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 0;
-        border-radius: 50px;
-        cursor: pointer;
-    }
-
-    /* Main content adjustment */
-    #main {
-        margin-left: 0;
-    }
-
-    /* Navigation menu styling */
-    .nav-menu {
-        padding: 20px 0;
-    }
-
-    .nav-menu ul {
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-menu a {
-        display: flex;
-        align-items: center;
-        padding: 12px 20px;
-        margin-bottom: 6px;
-    }
-
-    /* Profile section in mobile nav */
-    #header .profile {
-        padding: 15px;
-    }
-
-    #header .profile img {
-        margin: 15px auto;
-    }
-
-    /* Fix scrolling when nav is open */
-    body.mobile-nav-active {
-        overflow: hidden;
-    }
-
-    /* Overlay when nav is open */
-    .mobile-nav-active:before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9996;
-    }
+/* Mobile Navigation */
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    background-color: #149ddd;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-/* Additional fixes for very small screens */
-@media (max-width: 480px) {
-    #header {
-        width: 280px;
-    }
+.mobile-nav-active {
+    overflow: hidden;
+}
 
-    .nav-menu a {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    #header .profile img {
-        width: 80px;
-    }
-
-    #header .profile h1 {
-        font-size: 18px;
-    }
+.mobile-nav-active #header {
+    left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -306,13 +229,8 @@ h6 {
 #hero {
     width: 100%;
     height: 100vh;
-    background: url("../img/home.jpeg") center;
+    background: url("../img/home.994aed59ddfd.jpeg") top center;
     background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    display: none;
-    align-items: center;
-    justify-content: center;
 }
 
 #hero:before {
@@ -327,11 +245,18 @@ h6 {
 }
 
 #hero .hero-container {
-    position: relative;
+    position: absolute;
     z-index: 2;
     min-width: 300px;
-    padding: 0 15px;
-    text-align: center;
+
+}
+
+#hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
 }
 
 #hero p {
@@ -348,34 +273,22 @@ h6 {
     border-bottom: 3px solid #149ddd;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
     #hero {
-        background-attachment: scroll;
-        background-position: center center;
-        padding-top: 0;
-        height: 100vh; /* Force full viewport height */
-    }
-
-    #hero .hero-container {
-        width: 100%;
-        padding: 0 15px;
-        position: relative;
-        top: 0;
-        transform: translateY(0);
-    }
-
-    #hero p {
-        font-size: 20px;
-        margin-bottom: 30px;
+        background-attachment: fixed;
     }
 }
 
-/* Extra small devices */
-@media (max-width: 480px) {
-    #hero p {
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    #hero h2 {
         font-size: 18px;
-        margin-bottom: 20px;
+        line-height: 24px;
+        margin-bottom: 30px;
     }
 }
 
@@ -1246,7 +1159,7 @@ section {
 
 .mobile-nav-active #header {
     left: 0;
-    position: relative;
+    position: fixed;
     height: 100%;
     overflow-y: auto;
 }
