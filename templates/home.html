@@ -411,18 +411,17 @@
                 <h2>Contact</h2>
             </div>
 
+            <form method="POST" action="#contact" class="contact-form" id="contactForm">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
             {% if success_message %}
-                <div style="color: green; font-weight: bold;">
+                <div id="successMessage" style="color: green; font-weight: bold;">
                     {{ success_message }}
                 </div>
             {% endif %}
-
-            <form method="POST" action="#contact" class="contact-form">
-                {% csrf_token %}
-                {{ form.as_p }}
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
 
         </div>
     </section>

@@ -72,6 +72,7 @@ DATABASES = {
             'authSource': 'admin',
             'authMechanism': 'SCRAM-SHA-1'
         },
+        'ENFORCE_SCHEMA': True
     }
 }
 
