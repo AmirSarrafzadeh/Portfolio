@@ -10,17 +10,17 @@ class ContactForm(forms.ModelForm):
             'subject': forms.TextInput(attrs={
                 'placeholder': 'Enter Subject',
                 'class': 'form-control',
-                'style': 'width: 40%; padding: 10px; font-size: 16px;'
+                'style': 'width: 100%; max-width: 500px; padding: 10px; font-size: 16px;'
             }),
             'name': forms.TextInput(attrs={
                 'placeholder': 'Enter Name',
                 'class': 'form-control',
-                'style': 'width: 30%; padding: 10px; font-size: 16px;'
+                'style': 'width: 100%; max-width: 500px; padding: 10px; font-size: 16px;'
             }),
             'email': forms.EmailInput(attrs={
                 'placeholder': 'Enter Email',
                 'class': 'form-control',
-                'style': 'width: 50%; padding: 10px; font-size: 16px;'
+                'style': 'width: 100%; max-width: 500px;  padding: 10px; font-size: 16px;'
             }),
             'message': forms.Textarea(attrs={
                 'placeholder': 'Enter Message',

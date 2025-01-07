@@ -557,7 +557,8 @@ section h6{
 
 .contact-form .btn {
     display: block;
-    width: 20%;
+    width: 100%;
+    max-width: 300px;
     background: #149ddd;
     color: #fff;
     padding: 10px;
