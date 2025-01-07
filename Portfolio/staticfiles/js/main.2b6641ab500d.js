@@ -1,8 +1,6 @@
 (function () {
     "use strict";
 
-    const isMenuOpen = false;
-
     /**
      * Easy selector helper function
      */
@@ -83,6 +81,62 @@
         onscroll(document, toggleBacktotop);
     }
 
+    /**
+     * Mobile nav toggle
+     */
+    on('click', '.mobile-nav-toggle', function () {
+        const body = select('body');
+        const header = select('#header');
+        const toggle = select('.mobile-nav-toggle');
+
+        // Toggle classes for navigation
+        body.classList.toggle('mobile-nav-active');
+        header.classList.toggle('mobile-nav-active');
+
+        // Update the toggle button icon
+        toggle.classList.toggle('bi-list');
+        toggle.classList.toggle('bi-x');
+    });
+
+    /**
+     * Close mobile nav when clicking outside
+     */
+    document.addEventListener('click', function (e) {
+        const body = select('body');
+        const header = select('#header');
+        const toggle = select('.mobile-nav-toggle');
+
+        // Close nav if clicking outside
+        if (body.classList.contains('mobile-nav-active') &&
+            !e.target.closest('#header') &&
+            !e.target.closest('.mobile-nav-toggle')) {
+            body.classList.remove('mobile-nav-active');
+            header.classList.remove('mobile-nav-active');
+
+            // Reset toggle button icon
+            toggle.classList.add('bi-list');
+            toggle.classList.remove('bi-x');
+        }
+    });
+
+
+    /**
+     * Scroll with offset on links with a class name .scrollto
+     */
+    on('click', '.scrollto', function (e) {
+        if (select(this.hash)) {
+            e.preventDefault();
+            const body = select('body');
+            const navbarToggle = select('.mobile-nav-toggle');
+            if (body.classList.contains('mobile-nav-active')) {
+                body.classList.remove('mobile-nav-active');
+                navbarToggle.classList.add('bi-list');
+                navbarToggle.classList.remove('bi-x');
+                select('#header').classList.remove('mobile-nav-active');
+            }
+            scrollto(this.hash);
+        }
+    }, true);
 
     /**
      * Scroll with offset on page load with hash links in the URL
@@ -123,30 +177,9 @@
         });
     });
 
-    on('click', '#mobile-nav-toggle', function (e) {
-        const header = select('#header-mobile');
-        const menutranslation = 300;
-        if (getLocalStoreValue('isMenuOpen') === 'true') {
-            header.style.transform = `translateX(-${menutranslation}px)`;
-            setLocalStoreValue('isMenuOpen', 'false');
-        }
-        else {
-            header.style.transform = "translateX(0px)";
-            setLocalStoreValue('isMenuOpen', 'true');
-        }
-
-    });
-
-    const getLocalStoreValue = (key) => {
-        return localStorage.getItem(key);
-    }
-
-    const setLocalStoreValue = (key, value) => {
-        localStorage.setItem(key, value);
-    }
-
+    /**
+     * Initiate Pure Counter
+     */
     new PureCounter();
-
-
 
 })();

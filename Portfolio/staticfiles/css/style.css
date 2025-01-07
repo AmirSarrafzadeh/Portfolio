@@ -1,6 +1,7 @@
 /*!*--------------------------------------------------------------*/
 /*# Back to top button*/
 /*--------------------------------------------------------------*!*/
+
 .back-to-top {
     position: fixed;
     visibility: hidden;
@@ -34,7 +35,11 @@
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+
+#header-mobile {
+    display: none;
+}
+#header, #header-mobile {
     position: fixed;
     top: 0;
     left: 0;
@@ -47,14 +52,14 @@
     overflow-y: auto;
 }
 
-#header .profile img {
+#header .profile img, #header-mobile .profile img {
     margin: 15px auto;
     display: block;
     width: 120px;
     border: 8px solid #2c2f3f;
 }
 
-#header .profile h1 {
+#header .profile h1, #header-mobile .profile h1{
     font-size: 22px;
     margin: 0;
     padding: 0;
@@ -70,7 +75,7 @@
 /*    text-decoration: none;*/
 /*}*/
 
-#header .profile .social-links a {
+#header .profile .social-links a, #header-mobile .profile .social-links a{
     font-size: 18px;
     display: inline-block;
     background: #212431;
@@ -85,13 +90,14 @@
     transition: 0.3s;
 }
 
-#header .profile .social-links a:hover {
+#header .profile .social-links a:hover, #header-mobile .profile .social-links a:hover{
     background: orangered; /* change color of social links */
     color: #fff;
     text-decoration: none;
 }
 
 #main {
+
     margin-left: 300px;
 }
 /*--------------------------------------------------------------
@@ -170,10 +176,15 @@
 
 .mobile-nav-active {
   overflow: hidden;
+
 }
 
 .mobile-nav-active #header {
   left: 0;
+}
+
+.mobile-nav-toggle.bi-x {
+    content: "\f00d"; /* FontAwesome or Bootstrap icon for close */
 }
 /*--------------------------------------------------------------
 # Hero Section
@@ -247,9 +258,27 @@
         transform: translateY(0);
     }
 
+    #hero .hero-container p {
+        position: relative;
+        top: 0;
+    }
+
     #hero p {
         font-size: 20px;
         margin-bottom: 30px;
+    }
+
+    #main{
+        margin-left: 0;
+    }
+
+    #header {
+        display: none;
+    }
+
+    #header-mobile {
+        display: block;
+        position: fixed;
     }
 }
 
@@ -259,6 +288,8 @@
         font-size: 18px;
         margin-bottom: 20px;
     }
+
+
 }
 
 /*--------------------------------------------------------------
@@ -426,7 +457,7 @@ section h6{
     align-items: stretch;
     min-height: 100vh;
     overflow: hidden;
-    width: 1200px;
+    width: 100%;
 }
 
 .projects {
@@ -550,3 +581,5 @@ section h6{
 .errorlist {
     display: none;
 }
+
+

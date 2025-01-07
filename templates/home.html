@@ -38,11 +38,46 @@
 
 <body>
 
+<div class="main-container">
+   
 <!-- ======= Mobile nav toggle button ======= -->
-<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<i id="mobile-nav-toggle" class="bi bi-list mobile-nav-toggle d-xl-none mobile-nav-active"></i>
 
 <!-- ======= Header ======= -->
 <header id="header">
+    <div class="d-flex flex-column">
+
+        <div class="profile">
+            <img src="{% static 'img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+            <h1 class="text-light">Amir Sarrafzadeh Arasi</h1>
+            <div class="social-links mt-3 text-center">
+                <a href="https://www.linkedin.com/in/amir-sarrafzadeh/" class="linkedin" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/AmirSarrafzadeh" class="github" target="_blank"><i
+                        class="bx bxl-github"></i></a>
+            </div>
+
+        </div>
+
+        <nav id="navbar" class="nav-menu navbar">
+            <ul>
+                <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+                </li>
+                <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
+                </li>
+                <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Skills</span></a>
+                </li>
+                <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-server"></i>
+                    <span>Projects</span></a></li>
+                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<header id="header-mobile">
     <div class="d-flex flex-column">
 
         <div class="profile">
@@ -426,7 +461,8 @@
         </div>
     </section>
 
-</main>
+</main> 
+</div>
 
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

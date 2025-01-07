@@ -1,6 +1,8 @@
 (function () {
     "use strict";
 
+    const isMenuOpen = false;
+
     /**
      * Easy selector helper function
      */
@@ -81,52 +83,6 @@
         onscroll(document, toggleBacktotop);
     }
 
-    /**
-     * Mobile nav toggle
-     */
-    on('click', '.mobile-nav-toggle', function () {
-        const body = select('body');
-        const header = select('#header');
-        body.classList.toggle('mobile-nav-active');
-        this.classList.toggle('bi-list');
-        this.classList.toggle('bi-x');
-        header.classList.toggle('mobile-nav-active');
-    });
-
-    /**
-     * Close mobile nav when clicking outside
-     */
-    document.addEventListener('click', function (e) {
-        const body = select('body');
-        const header = select('#header');
-        const toggle = select('.mobile-nav-toggle');
-        if (body.classList.contains('mobile-nav-active') &&
-            !e.target.closest('#header') &&
-            !e.target.closest('.mobile-nav-toggle')) {
-            body.classList.remove('mobile-nav-active');
-            header.classList.remove('mobile-nav-active');
-            toggle.classList.add('bi-list');
-            toggle.classList.remove('bi-x');
-        }
-    });
-
-    /**
-     * Scroll with offset on links with a class name .scrollto
-     */
-    on('click', '.scrollto', function (e) {
-        if (select(this.hash)) {
-            e.preventDefault();
-            const body = select('body');
-            const navbarToggle = select('.mobile-nav-toggle');
-            if (body.classList.contains('mobile-nav-active')) {
-                body.classList.remove('mobile-nav-active');
-                navbarToggle.classList.add('bi-list');
-                navbarToggle.classList.remove('bi-x');
-                select('#header').classList.remove('mobile-nav-active');
-            }
-            scrollto(this.hash);
-        }
-    }, true);
 
     /**
      * Scroll with offset on page load with hash links in the URL
@@ -156,106 +112,6 @@
     }
 
     /**
-     * Skills animation
-     */
-    let skilsContent = select('.skills-content');
-    if (skilsContent) {
-        new Waypoint({
-            element: skilsContent,
-            offset: '80%',
-            handler: function () {
-                let progress = select('.progress .progress-bar', true);
-                progress.forEach((el) => {
-                    el.style.width = el.getAttribute('aria-valuenow') + '%';
-                });
-            }
-        });
-    }
-
-    /**
-     * Portfolio isotope and filter
-     */
-    window.addEventListener('load', () => {
-        let portfolioContainer = select('.portfolio-container');
-        if (portfolioContainer) {
-            let portfolioIsotope = new Isotope(portfolioContainer, {
-                itemSelector: '.portfolio-item'
-            });
-
-            let portfolioFilters = select('#portfolio-flters li', true);
-
-            on('click', '#portfolio-flters li', function (e) {
-                e.preventDefault();
-                portfolioFilters.forEach(function (el) {
-                    el.classList.remove('filter-active');
-                });
-                this.classList.add('filter-active');
-
-                portfolioIsotope.arrange({
-                    filter: this.getAttribute('data-filter')
-                });
-                portfolioIsotope.on('arrangeComplete', function () {
-                    AOS.refresh();
-                });
-            }, true);
-        }
-
-    });
-
-    /**
-     * Initiate portfolio lightbox
-     */
-    const portfolioLightbox = GLightbox({
-        selector: '.portfolio-lightbox'
-    });
-
-    /**
-     * Portfolio details slider
-     */
-    new Swiper('.portfolio-details-slider', {
-        speed: 400,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        }
-    });
-
-    /**
-     * Testimonials slider
-     */
-    new Swiper('.testimonials-slider', {
-        speed: 600,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false
-        },
-        slidesPerView: 'auto',
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-
-            1200: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            }
-        }
-    });
-
-    /**
      * Animation on scroll
      */
     window.addEventListener('load', () => {
@@ -267,9 +123,30 @@
         });
     });
 
-    /**
-     * Initiate Pure Counter
-     */
+    on('click', '#mobile-nav-toggle', function (e) {
+        const header = select('#header-mobile');
+        const menutranslation = 300;
+        if (getLocalStoreValue('isMenuOpen') === 'true') {
+            header.style.transform = `translateX(-${menutranslation}px)`;
+            setLocalStoreValue('isMenuOpen', 'false');
+        }
+        else {
+            header.style.transform = "translateX(0px)";
+            setLocalStoreValue('isMenuOpen', 'true');
+        }
+
+    });
+
+    const getLocalStoreValue = (key) => {
+        return localStorage.getItem(key);
+    }
+
+    const setLocalStoreValue = (key, value) => {
+        localStorage.setItem(key, value);
+    }
+
     new PureCounter();
+
+
 
 })();
