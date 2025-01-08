@@ -1,12 +1,37 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# Operating System-specific files
+## macOS
+.DS_Store
 
-# C extensions
+## Linux
+*.swp
+*~
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python-related files
+## Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+__pycache__/
+
+## C extensions
 *.so
 
-# Distribution / packaging
+## Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+## Packaging
 .Python
 build/
 develop-eggs/
@@ -25,18 +50,60 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
-# Installer logs
+## Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+## PEP 582
+__pypackages__/
+
+## PyBuilder
+.pybuilder/
+target/
+
+## Type checkers and static analyzers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+## Cython
+cython_debug/
+
+## Other Python tools
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# Python project-specific files
+## Django
+*.log
+*.pot
+*.py[cod]
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+media/
+
+## Flask
+instance/
+.webassets-cache
+
+## Celery
+celerybeat-schedule
+celerybeat.pid
+
+## Scrapy
+.scrapy
+
+## SageMath
+*.sage.py
+
+## Unit test / coverage reports
 htmlcov/
 .tox/
 .nox/
@@ -51,201 +118,57 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
+## Jupyter Notebook
 .ipynb_checkpoints
 
-# IPython
+## IPython
 profile_default/
 ipython_config.py
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# Documentation
+## Sphinx
+docs/_build/
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
+## mkdocs
 /site
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-*.pyc
-__pycache__/
-db.sqlite3
-env/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-# PyPI configuration file
-.pypirc
-
-# Byte-compiled / optimized / DLL files
-*.pyc
-*.pyo
-*.pyd
-__pycache__/
-*.swo
-*.swp
-*.bak
-
-# Django specific
-*.log
-*.pot
-*.py[cod]
-*.sqlite3
-db.sqlite3
-media/
-
-# Node modules
-node_modules/
-
-# Python virtual environment
-venv/
-env/
-
-# Environment variables
-.env
-
-# IDE/editor specific
+# IDE/editor-specific files
+## JetBrains (PyCharm, IntelliJ, etc.)
 .idea/
+
+## VS Code
 .vscode/
+
+## Sublime Text
 *.sublime-project
 *.sublime-workspace
 
-# macOS specific
-.DS_Store
+## Spyder
+.spyderproject
+.spyproject
 
-# Linux specific
-*.swp
-*~
+## Rope
+.ropeproject
 
-# Windows specific
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Logs and temporary files
+logs/
+*.out
+*.pid
+*.gz
+*.dump
 
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+# Node.js / Frontend-related files
+## Node modules
+node_modules/
 
-# Test and debug files
-.tox/
-dist/
-build/
-*.egg-info/
-.eggs/
-
-# Frontend build tools
+## Frontend build tools
 *.map
 *.lock
 npm-debug.log
 yarn-error.log
 yarn-debug.log*
 
-# Local static files
+## Local static files
 assets/
 frontend-build/
 
@@ -253,11 +176,12 @@ frontend-build/
 *.env
 *.env.*
 
-# Logs and temporary files
-logs/
-*.log
-*.out
-*.pid
-*.gz
-*.dump
+# Temporary files and backups
+*.swo
+*.bak
+
+# PyPI configuration
+.pypirc
+
+# Other
 .vercel
