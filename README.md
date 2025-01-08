@@ -1,6 +1,6 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Platypi&weight=900&size=24&pause=1000&color=D2691E&background=2FB94200&center=true&vCenter=true&random=false&width=838&height=80&lines=Welcome+to+My+Portfolio+Repository!+%F0%9F%91%8B)](https://git.io/typing-svg)<img src="https://avatars.mds.yandex.net/i?id=0f99f6aad0e457967e4ba476316863a6_l-5145180-images-thumbs&ref=rim&n=13&w=1920&h=1080" alt="Photo">
 
-# My Portfolio 
+# 🖥️ My Portfolio 
 
 Welcome to the repository of my **Portfolio Web Application**. This project is built using Django for the backend, 
 MongoDB Atlas for the database, and HTML/CSS/JavaScript for the frontend. The application showcases about me, skills, 
@@ -8,20 +8,18 @@ and projects while allowing visitors to get in touch with me using a contact for
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup Instructions](#setup-instructions)
-- [Environment Variables](#environment-variables)
-- [Folder Structure](#folder-structure)
-- [Usage](#usage)
-- [Contact](#contact)
-- [License](#license)
+- 🌟 [Features](#features)
+- 🔧 [Technologies Used](#technologies-used)
+- 🚀 [Getting Started](#Getting Started)
+- 📂 [Folder Structure](#folder-structure)
+- 📬 [Contact](#contact)
+- 🛠️ [License](#license)
 
 ---
 
-## Features
+## 🌟 Features
 
 - Responsive design for both desktop and mobile.
 - Sections for **About Me**, **Skills**, **Resume**, **Projects**, and **Contact**.
@@ -32,7 +30,7 @@ and projects while allowing visitors to get in touch with me using a contact for
 
 ---
 
-## Technologies Used
+## 🔧 Technologies Used
 
 ### Backend:
 - **Django**: Python web framework for server-side logic.
@@ -51,7 +49,7 @@ and projects while allowing visitors to get in touch with me using a contact for
 
 ---
 
-## Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites:
 - Python (==3.11.8)
@@ -102,7 +100,19 @@ python manage.py runserver
 http://127.0.0.1:8000
 ```
 
-8. Folder Structure
+8. Usage<br>
+Contact Form:
+Users can fill out the contact form to send their details (name, email, subject, message). Submissions are stored in the contacts collection in MongoDB Atlas.
+
+9. Adding New Projects:
+Update the home.html file under the #portfolio section with the new project details.
+Include any required static assets (images, icons) in the static/ folder.
+
+
+10. Customizing the Design:
+Edit the style.css file in the static/css folder to modify the design and layout.
+
+## 📂 Folder Structure
 ```
 Portfolio/
 ├── home/                  # App folder
@@ -131,19 +141,9 @@ Portfolio/
 ├── .requirements.txt      # Python dependencies
 └── .runtime.txt           # Python runtime version 
 ```
-9. Usage<br>
-Contact Form:
-Users can fill out the contact form to send their details (name, email, subject, message). Submissions are stored in the contacts collection in MongoDB Atlas.
-
-10. Adding New Projects:
-Update the home.html file under the #portfolio section with the new project details.
-Include any required static assets (images, icons) in the static/ folder.
 
 
-11. Customizing the Design:
-Edit the style.css file in the static/css folder to modify the design and layout.
-
-Contact
+## 📬 Contact
 Feel free to reach out for any inquiries or collaborations:
 
 - [Email](mailto:amirsarrafzadeh88@gmail.com)
@@ -151,7 +151,7 @@ Feel free to reach out for any inquiries or collaborations:
 - <a href="https://github.com/AmirSarrafzadeh/">Github</a>
 
 
-License
+## 🛠️ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
