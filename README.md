@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Platypi&weight=900&size=24&pause=1000&color=D2691E&background=2FB94200&center=true&vCenter=true&random=false&width=838&height=80&lines=Welcome+to+My+Portfolio+Repository!+%F0%9F%91%8B)](https://git.io/typing-svg)<img src="https://github.com/AmirSarrafzadeh/Portfolio/tree/main/static/img/portfolio.png?raw=true" alt="Photo">
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Platypi&weight=900&size=24&pause=1000&color=D2691E&background=2FB94200&center=true&vCenter=true&random=false&width=838&height=80&lines=Welcome+to+My+Portfolio+Repository!+%F0%9F%91%8B)](https://git.io/typing-svg)<img src="https://avatars.mds.yandex.net/i?id=0f99f6aad0e457967e4ba476316863a6_l-5145180-images-thumbs&ref=rim&n=13&w=1920&h=1080" alt="Photo">
 
 # My Portfolio 
 
