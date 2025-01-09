@@ -96,7 +96,7 @@
     });
 
     /**
-     * Hero type effect
+     * Home type effect
      */
     const typed = select('.typed');
     if (typed) {

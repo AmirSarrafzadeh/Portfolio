@@ -61,7 +61,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Portfolio.wsgi.application'
-"mongodb+srv://admin:156601366Sarina@contacts.hgmck.mongodb.net/?retryWrites=true&w=majority&appName=contacts"
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
