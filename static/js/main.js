@@ -125,7 +125,7 @@
 
     on('click', '#mobile-nav-toggle', function (e) {
         const header = select('#header-mobile');
-        const menutranslation = 300;
+        const menutranslation = 768;
         if (getLocalStoreValue('isMenuOpen') === 'true') {
             header.style.transform = `translateX(-${menutranslation}px)`;
             setLocalStoreValue('isMenuOpen', 'false');

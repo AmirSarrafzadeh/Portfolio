@@ -19,7 +19,6 @@ DEBUG = True
 ALLOWED_HOSTS = ["herokuapp.com", "*"]
 
 # Application definition
-
 INSTALLED_APPS = [
     'home',
     'clearcache',
@@ -41,6 +40,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
 
 ROOT_URLCONF = 'Portfolio.urls'
 
