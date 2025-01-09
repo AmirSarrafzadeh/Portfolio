@@ -37,7 +37,7 @@ pymongo==3.11.4
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2024.2
-pywin32==308
+pywin32==308; platform_system == "Windows"
 pyzmq==26.2.0
 requests==2.32.3
 six==1.17.0
